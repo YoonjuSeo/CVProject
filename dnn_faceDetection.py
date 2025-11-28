@@ -32,10 +32,18 @@ def detectAndDisplay(frame):
             #인덱스 3:7은 감지된 객체의 바운딩 박스 좌표를 나타내며, 일반적으로 순서는 다음과 같다: [xmin, ymin, xmax, ymax]
             box = detections[0,0,i,3:7] * np.array([width, height, width, height])
             (startX, startY, endX, endY) = box.astype("int")
+            print(confidence, startX, startY, endX, endY)
 
-            #draw the bounding box of the face along woth the associated probability
-            text = ""
+            #draw the bounding box of the face along with the associated probability
+            text = "{:.2f}%".format(confidence*100)
+            #text가 표시될 위치를 지정
+            y = startY - 10 if startY-10 >10 else startY+10
 
+            cv2.rectangle(frame, (startX, startY), (endX, endY), (0,255,0),2)
+            cv2.putText(frame, text,(startX,y), cv2.FONT_HERSHEY_SIMPLEX, 0.5,(0,255,0),1)
+        
+        #show the output image
+        cv2.imshow("Face Detection by dnn", frame)
 
 
 print("OpenCV version:")
