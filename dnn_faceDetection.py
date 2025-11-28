@@ -4,7 +4,7 @@ import numpy as np
 model_name='res10_300x300_ssd_iter_140000.caffemodel' #실제 parameter값이 들어있는 파일
 prototxt_name='deploy.prototxt.txt' #caffe 모델이 어떤 구성으로 이루어져있다는 것을 보여주는 것
 min_confidence = 0.5 # 이 값 이상의 확률값이 나오는 것만 detection 할 것임
-file_name = "image/marathon_01.jpg"
+file_name = "image/character.png"
 
 def detectAndDisplay(frame):
     #Pass the blob through the model and obstain the detections
