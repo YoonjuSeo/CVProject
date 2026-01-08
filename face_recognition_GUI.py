@@ -7,7 +7,7 @@ from PIL import Image
 from PIL import ImageTk
 from tkinter import filedialog
 
-image_file = 'image/faceDetection_sample6.jpg'
+image_file = 'image/marathon_01.jpg'
 encoding_file = 'encodings.pickle'
 unknown_name = 'Unknown'
 title_name = 'Face Recognition'
@@ -95,7 +95,7 @@ data = pickle.loads(open(encoding_file, "rb").read())
 
 #load the input image and convert it from BGR to RGB
 read_image = cv2.imread(image_file)
-read_image = cv2.resize(read_image, (0, 0), fx=0.2, fy=0.2) #이미지 사이즈를 0.2로 축소
+#read_image = cv2.resize(read_image, (0, 0), fx=0.2, fy=0.2) #이미지 사이즈를 0.2로 축소
 image = cv2.cvtColor(read_image, cv2.COLOR_BGR2RGB)
 image = Image.fromarray(image)
 imgtk = ImageTk.PhotoImage(image = image)

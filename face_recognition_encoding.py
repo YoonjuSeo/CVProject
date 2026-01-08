@@ -2,9 +2,9 @@ import cv2
 import face_recognition
 import pickle
 
-dataset_paths=['dataset/Soma/']
-names = ['Soma']
-number_images=20
+dataset_paths=['dataset/son/', 'dataset/tedy/']
+names = ['Son','Tedy']
+number_images=10
 image_type = '.jpg'
 encoding_file = 'encodings.pickle'
 #Either cnn or hog. The CNN method is more accurate but slower. HOG is faster but less accurate

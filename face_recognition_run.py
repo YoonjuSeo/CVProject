@@ -3,7 +3,7 @@ import face_recognition
 import pickle
 import time
 
-image_file = 'image/faceDetection_sample7.jpg'
+image_file = 'image/marathon_01.jpg'
 encoding_file='encodings.pickle'
 unknown_name = 'Unknown'
 model_method = 'cnn'
@@ -59,7 +59,7 @@ data= pickle.loads(open(encoding_file, "rb").read())
 
 #load the input image
 image = cv2.imread(image_file)
-image = cv2.resize(image, (0, 0), fx=0.2, fy=0.2) #이미지 사이즈를 0.2로 축소
+#image = cv2.resize(image, (0, 0), fx=0.2, fy=0.2) #이미지 사이즈를 0.2로 축소
 detectAndDisplay(image)
 
 cv2.waitKey(0)
